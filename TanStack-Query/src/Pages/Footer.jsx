@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ textAlign: "center", p: 2, mt: 2, bgcolor: "grey.200" }}>
+    <Box component="footer" sx={{ textAlign: "center", p: 2, mt: 2, bgcolor: "grey.200" , position:"absolute" , width:"97%", top:"93%" }}>
       <Typography variant="body2">© {new Date().getFullYear()} My Application</Typography>
     </Box>
   );

@@ -1,11 +1,36 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
+import { makeStyles } from "@mui/styles"; // Import from @mui/styles
 
+const useStyles = makeStyles(() => ({
+  linkSection: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  links: {
+    padding: "5px",
+    color: "red",
+    textDecoration: "none",
+  },
+}));
 const Header = () => {
+  const classes = useStyles();
   return (
     <AppBar position="static">
-      <Toolbar>
+      <Toolbar className={classes.linkSection}>
         <Typography variant="h6">My Application</Typography>
+        <Box>
+          <NavLink className={classes.links} to={"/home"}>
+            Home
+          </NavLink>
+          <NavLink className={classes.links} to={"/about"}>
+            About
+          </NavLink>
+          <NavLink className={classes.links} to={"/contact"}>
+            Contact
+          </NavLink>
+        </Box>
       </Toolbar>
     </AppBar>
   );
